@@ -21,7 +21,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "drv_led.h"
-#define duty_cycle 400
+#include "heartbeat_module.h"
+#define duty_cycle 500
+#define dual_duty_cycle 1000
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -96,7 +99,9 @@ int main(void)
   while (1)
   {
 
-	  heartbeat_func(duty_cycle);
+      heartbeat_moving(duty_cycle);
+      all_leds_blinking(dual_duty_cycle);
+
 
   }
   /* USER CODE END 3 */
